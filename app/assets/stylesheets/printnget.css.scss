@@ -1,0 +1,37 @@
+$myOrange:#f89406;
+$myBlueDark: #304269;
+$myBlue: #91BED4;
+$myBlueLight: #D9E8F5;
+$myWhite: #eee;
+$myGrayBlue: #43464C;
+
+$white: #ffffff;
+$black: #000000;
+$darkblue: #339bb9;
+$darkestblue: #257085;
+$lightblue: #001eff;
+$darkgrey: #333333;
+$grayMediumLight: #eaeaea;
+
+$myBackWell: rgba($grayMediumLight, .95);
+$myBack: $myBlueLight;
+/* colors */
+/*$linkColor: $myBlueDark;*/
+$navbarBackground: #333333;
+$navbarInnerBackground: #333333;
+$navbarBackgroundHighlight: lighten($navbarBackground, 10);
+$navbarLinkColor: darken($white, 10);
+$navbarLinkColorHover: $white;
+$bodyBackground: $myBack;
+$dropdownBackground: $myBackWell;
+$dropdownLinkColor: $darkestblue;
+$hrBorder: $myBlue;
+$heroUnitBackground: lighten($myBackWell, 20);
+$dropdownLinkColorHover: darken($white, 10);
+
+/* typography */
+$sansFontFamily: 'PT Sans Narrow', 'Lucida Grande', serif;
+$baseFontSize: 16px;
+
+
+@import "bootstrap";
