@@ -1,0 +1,10 @@
+%li#fat-menu.dropdown
+  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+    = current_user.name
+    %b.caret
+  %ul.dropdown-menu
+    %li= link_to "Perfil", user_path(current_user)
+    %li= link_to "Preferencias", '#'
+    %li.divider
+    %li
+      = link_to "Desligar", destroy_user_session_path, method: "delete"

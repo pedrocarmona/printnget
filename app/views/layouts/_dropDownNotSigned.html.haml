@@ -1,0 +1,35 @@
+%li#fat-menu.dropdown
+  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+    Sign in
+    %b.caret
+  %ul.dropdown-menu
+    %li
+      .span1{:style => "width:32px;padding:2px;margin:1px;"}
+        %a.auth_provider{:href => "/auth/facebook", :style => "display:inline"}
+          = image_tag "facebook_64.png", :size => "32x32", :alt => "Facebook"
+      .span1{:style => "width:32px;padding:2px;margin:1px;"}
+        %a.auth_provider.inline{:href => "/auth/google_oauth2"}
+          = image_tag "google_oauth2_64.png", :size => "32x32", :alt => "Google"
+      .span1{:style => "width:32px;padding:2px;margin:1px;"}
+        %a.auth_provider.inline{:href => "/auth/twitter"}
+          = image_tag "twitter_64.png", :size => "32x32", :alt => "Twitter"
+      .span1{:style => "width:32px;padding:2px;margin:1px;"}
+        %a.auth_provider.inline{:href => "/auth/linkedin"}
+          = image_tag "linkedin_64.png", :size => "32x32", :alt => "LinkedIn"
+    %li
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-inline" }  ) do |f|
+        %fieldset
+          .control-group
+            = f.label :email,:class => "control-label"
+            .controls
+              = f.email_field :email,:autofocus => true, :class=> "input-large", :placeholder=>"Email"
+          .control-group
+            = f.label :password,:class => "control-label"
+            .controls
+              = f.password_field :password, :class=> "input-large", :placeholder=>"Password"
+          .control-group
+            .controls
+              Lembrar #{f.check_box :remember_me, :class =>"checkbox"}
+              \#{f.submit "Ligar", class: "btn"}
+    %li
+      New user? #{link_to "Regista-te agora!", new_user_registration_path}

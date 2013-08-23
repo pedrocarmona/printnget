@@ -1,0 +1,17 @@
+%header.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a#header-logo.pull-left
+      = link_to "Print&Get", root_path, id: "logo"
+      %nav
+        - if signed_in?
+          %ul.nav.pull-right
+            %li= link_to "Imprimir",    new_order_path
+            %li= link_to "My Prints", orders_path
+            %li= link_to "Ajuda", help_path
+            = render 'layouts/dropDownSigned'
+        - else
+          %ul.nav.pull-right
+            %li= link_to "Home",    root_path
+            %li= link_to "Ajuda", help_path
+            = render 'layouts/dropDownNotSigned'
