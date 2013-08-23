@@ -31,7 +31,7 @@ gem 'devise'
 gem 'protected_attributes'
 gem 'zeus'
 gem "haml-rails"
-
+gem "cancan"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
