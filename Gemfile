@@ -29,10 +29,17 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 gem 'protected_attributes'
+gem 'zeus'
+gem "haml-rails"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development do
+  gem "better_errors"
 end
 
 # Use ActiveModel has_secure_password
