@@ -1,2 +1,10 @@
-%h1 StaticPages#welcome
-%p Find me in app/views/static_pages/welcome.html.haml
+.center.hero-unit
+  %ul.thumbnails
+    %li.span5
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "210", :src => "http://www.youtube.com/embed/7SdJtYkAzTw", :width => "380"}
+    %li.span5
+      .thumbnail
+        %p Texto exemplo
+  .center
+    = #link_to raw("<i class=\"icon-print icon-white\"></i>")+" Imprimir", new_order_path, class: "btn btn-large btn-primary"
+%br

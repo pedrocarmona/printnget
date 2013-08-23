@@ -1,7 +1,8 @@
 Printandget::Application.routes.draw do
-  get "static_pages/help"
-  get "static_pages/contacts"
-  get "static_pages/faqs"
+
+  match '/help',    to: 'static_pages#help', via: [:get]
+  match '/faqs',   to: 'static_pages#faqs' ,via: [:get]
+  match '/contacts', to: 'static_pages#contacts', via: [:get]
 
   root 'static_pages#welcome'
 
