@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :stretches => 20
 
-    attr_accessible :firstname, :lastname 
+    attr_accessible :firstname, :lastname , :email
 
 end
