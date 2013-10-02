@@ -1,12 +1,15 @@
 Printandget::Application.routes.draw do
 
+  devise_for :owners
+  devise_for :employees
+  devise_for :admins
+  devise_for :clients
   match '/help',    to: 'static_pages#help', via: [:get]
   match '/faqs',   to: 'static_pages#faqs' ,via: [:get]
   match '/contacts', to: 'static_pages#contacts', via: [:get]
 
   root 'static_pages#welcome'
 
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
