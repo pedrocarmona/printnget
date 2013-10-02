@@ -3,7 +3,7 @@ class CreatePayments < ActiveRecord::Migration
     create_table :payments do |t|
       t.decimal :amount
       t.datetime :date
-      t.int :status
+      t.integer :status
       t.boolean :type
 
       t.timestamps

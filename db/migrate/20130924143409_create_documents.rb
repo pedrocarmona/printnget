@@ -2,9 +2,9 @@ class CreateDocuments < ActiveRecord::Migration
   def change
     create_table :documents do |t|
       t.string :name
-      t.int :type
+      t.integer :type
       t.decimal :size
-      t.int :nr_pages
+      t.integer :nr_pages
 
       t.timestamps
     end
