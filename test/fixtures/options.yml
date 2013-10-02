@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  color: false
+  both_sides: false
+  nr_copies: 
+  page_range: MyString
+  observation: MyText
+  portrait: false
+  pages_per_sheet: 
+  cover: 
+
+two:
+  color: false
+  both_sides: false
+  nr_copies: 
+  page_range: MyString
+  observation: MyText
+  portrait: false
+  pages_per_sheet: 
+  cover: 

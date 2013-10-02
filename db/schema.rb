@@ -11,7 +11,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130822163942) do
+ActiveRecord::Schema.define(version: 20130924152316) do
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.integer  "nif"
+    t.integer  "phone"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "store_id"
+  end
+
+  add_index "companies", ["store_id"], name: "index_companies_on_store_id"
+
+  create_table "documents", force: true do |t|
+    t.string   "name"
+    t.integer  "type"
+    t.decimal  "size"
+    t.integer  "nr_pages"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "order_id"
+    t.integer  "options_id"
+  end
+
+  add_index "documents", ["options_id"], name: "index_documents_on_options_id"
+  add_index "documents", ["order_id"], name: "index_documents_on_order_id"
+
+  create_table "options", force: true do |t|
+    t.boolean  "color"
+    t.boolean  "both_sides"
+    t.integer  "nr_copies"
+    t.string   "page_range"
+    t.text     "observation"
+    t.boolean  "portrait"
+    t.integer  "pages_per_sheet"
+    t.integer  "cover"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.decimal  "price"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "payment_id"
+  end
+
+  add_index "orders", ["payment_id"], name: "index_orders_on_payment_id"
+
+  create_table "payments", force: true do |t|
+    t.decimal  "amount"
+    t.datetime "date"
+    t.integer  "status"
+    t.boolean  "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stores", force: true do |t|
+    t.string   "address"
+    t.integer  "phone"
+    t.integer  "lat"
+    t.integer  "long"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

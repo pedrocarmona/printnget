@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  amount: 9.99
+  date: 2013-09-24 15:50:14
+  status: 
+  type: false
+
+two:
+  amount: 9.99
+  date: 2013-09-24 15:50:14
+  status: 
+  type: false
