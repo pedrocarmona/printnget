@@ -3,7 +3,18 @@ Printandget::Application.routes.draw do
   devise_for :owners
   devise_for :employees
   devise_for :admins
+
+  resources :admins, :controller => 'admins/admins' do
+    collection do
+      resources :clients, :controller => 'admins/clients'
+    end
+
+  end
+
   devise_for :clients
+  resources :orders
+  resources :clients, only: [:show,:edit,:update,:destroy]
+
   match '/help',    to: 'static_pages#help', via: [:get]
   match '/faqs',   to: 'static_pages#faqs' ,via: [:get]
   match '/contacts', to: 'static_pages#contacts', via: [:get]
