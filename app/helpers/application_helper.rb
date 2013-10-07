@@ -10,7 +10,9 @@ module ApplicationHelper
 	def devise_mapping
 		@devise_mapping ||= Devise.mappings[:client]
 	end
-
 	
+	def current_user
+		current_client
+	end
 
 end

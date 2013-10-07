@@ -3,6 +3,11 @@ Printandget::Application.routes.draw do
   devise_for :owners
   devise_for :employees
   devise_for :admins
+
+  resources :admins, :controller => 'admins/admins' do
+    resources :clients, :controller => 'admins/clients'
+  end
+
   devise_for :clients
   resources :orders
   resources :clients, only: [:show,:edit,:update,:destroy]
