@@ -11,7 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130924152316) do
+ActiveRecord::Schema.define(version: 20131002213303) do
+
+  create_table "admins", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "given_name",             default: "", null: false
+    t.string   "last_name",              default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "clients", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "given_name",             default: "", null: false
+    t.string   "last_name",              default: "", null: false
+    t.integer  "nif",                    default: 0
+    t.integer  "phone",                  default: 0,  null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "clients", ["email"], name: "index_clients_on_email", unique: true
+  add_index "clients", ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -39,6 +81,26 @@ ActiveRecord::Schema.define(version: 20130924152316) do
   add_index "documents", ["options_id"], name: "index_documents_on_options_id"
   add_index "documents", ["order_id"], name: "index_documents_on_order_id"
 
+  create_table "employees", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "given_name",             default: "", null: false
+    t.string   "last_name",              default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "employees", ["email"], name: "index_employees_on_email", unique: true
+  add_index "employees", ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
+
   create_table "options", force: true do |t|
     t.boolean  "color"
     t.boolean  "both_sides"
@@ -61,6 +123,27 @@ ActiveRecord::Schema.define(version: 20130924152316) do
   end
 
   add_index "orders", ["payment_id"], name: "index_orders_on_payment_id"
+
+  create_table "owners", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "given_name",             default: "", null: false
+    t.string   "last_name",              default: "", null: false
+    t.integer  "phone",                  default: 0,  null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "owners", ["email"], name: "index_owners_on_email", unique: true
+  add_index "owners", ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
 
   create_table "payments", force: true do |t|
     t.decimal  "amount"
