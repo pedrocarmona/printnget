@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   include ClientsHelper
   before_action :set_client, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_client!
-  load_and_authorize_resource 
+  load_and_authorize_resource
   # GET /clients
   # GET /clients.json
   def index

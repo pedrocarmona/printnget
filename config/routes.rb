@@ -5,7 +5,10 @@ Printandget::Application.routes.draw do
   devise_for :admins
 
   resources :admins, :controller => 'admins/admins' do
-    resources :clients, :controller => 'admins/clients'
+    collection do
+      resources :clients, :controller => 'admins/clients'
+    end
+
   end
 
   devise_for :clients
