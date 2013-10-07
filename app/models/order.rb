@@ -1,3 +1,4 @@
+require 'order_status.rb'
 class Order < ActiveRecord::Base
 	include OrderStatus
 

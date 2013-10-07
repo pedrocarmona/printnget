@@ -4,7 +4,7 @@
       %a#header-logo.pull-left
       = link_to "Print&Get", root_path, id: "logo"
       %nav
-        - if signed_in?
+        - if client_signed_in?
           %ul.nav.pull-right
             %li= link_to "Imprimir",    new_order_path
             %li= link_to "My Prints", orders_path
