@@ -1,14 +1,19 @@
 Printandget::Application.routes.draw do
 
   devise_for :owners
-  devise_for :employees
-  devise_for :admins
+  resources :owners do
+    collection do
+      resources :clients, :controller => 'owners/clients', only: [:show,:index]
+    end
+  end
 
+  devise_for :employees
+  
+  devise_for :admins
   resources :admins, :controller => 'admins/admins' do
     collection do
       resources :clients, :controller => 'admins/clients'
     end
-
   end
 
   devise_for :clients

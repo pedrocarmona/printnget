@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
   	redirect_to root_url, :alert => exception.message
   end
+
+  before_filter :update_sanitized_params, if: :devise_controller?
+
+  def update_sanitized_params
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:given_name, :last_name, :email, :password, :password_confirmation)}
+  end
 end
