@@ -1,0 +1,17 @@
+%h1 Listing admin_companies
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @admin_companies.each do |admin_company|
+    %tr
+      %td= link_to 'Show', admin_company
+      %td= link_to 'Edit', edit_admin_company_path(admin_company)
+      %td= link_to 'Destroy', admin_company, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Company', new_admin_company_path
