@@ -1,0 +1,12 @@
+%header.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a#header-logo.pull-left
+      = link_to "Print&Get", root_path, id: "logo"
+      %nav
+        - if employee_signed_in?
+          %ul.nav.pull-right
+            = render 'layouts/employees/dropDownSigned'
+        - else
+          %ul.nav.pull-right
+            = render 'layouts/employees/dropDownNotSigned'
