@@ -1,6 +1,8 @@
 %h1 Editing client
 
-= render 'form'
+= form_for @client, :url => admins_client_path(@client) do |f|
+  = render 'form', :f => f
+
 
 = link_to 'Show', @client
 \|
