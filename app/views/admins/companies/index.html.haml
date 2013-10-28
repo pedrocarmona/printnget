@@ -8,10 +8,10 @@
 
   - @admin_companies.each do |admin_company|
     %tr
-      %td= link_to 'Show', admin_company_path(admin_company)
-      %td= link_to 'Edit', edit_admin_company_path(current_admin,admin_company)
-      %td= link_to 'Destroy', admin_company_path(admin_company), :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Show', admins_company_path(admin_company)
+      %td= link_to 'Edit', edit_admins_company_path(admin_company)
+      %td= link_to 'Destroy', admins_company_path(admin_company), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Company', new_admin_company_path
+= link_to 'New Company', new_admins_company_path

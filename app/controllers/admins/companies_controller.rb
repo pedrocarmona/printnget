@@ -1,7 +1,7 @@
 class Admins::CompaniesController < Admins::ApplicationAdminsController
   before_action :set_admins_company, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin!
-  load_and_authorize_resource 
+  load_and_authorize_resource
 
   # GET /admins/companies
   # GET /admins/companies.json
@@ -30,7 +30,7 @@ class Admins::CompaniesController < Admins::ApplicationAdminsController
 
     respond_to do |format|
       if @admin_company.save
-        format.html { redirect_to admin_company_path(@admin_company), notice: 'Company was successfully created.' }
+        format.html { redirect_to admins_company_path(@admin_company), notice: 'Company was successfully created.' }
         format.json { render action: 'show', status: :created, location: @admin_company }
       else
         format.html { render action: 'new' }
@@ -66,7 +66,7 @@ class Admins::CompaniesController < Admins::ApplicationAdminsController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admins_company
-      @admins_company = Company.find(params[:id])
+      @admin_company = Company.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
