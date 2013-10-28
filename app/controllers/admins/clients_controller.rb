@@ -1,7 +1,7 @@
 class Admins::ClientsController < Admins::ApplicationAdminsController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin!
-  load_and_authorize_resource 
+  load_and_authorize_resource
   # GET /clients
   # GET /clients.json
   def index
@@ -29,7 +29,7 @@ class Admins::ClientsController < Admins::ApplicationAdminsController
 
     respond_to do |format|
       if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
+        format.html { redirect_to admins_client_path(@client), notice: 'Client was successfully created.' }
         format.json { render action: 'show', status: :created, location: @client }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class Admins::ClientsController < Admins::ApplicationAdminsController
   def update
     respond_to do |format|
       if @client.update(client_params)
-        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
+        format.html { redirect_to admins_client_path(@client), notice: 'Client was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -57,7 +57,7 @@ class Admins::ClientsController < Admins::ApplicationAdminsController
   def destroy
     @client.destroy
     respond_to do |format|
-      format.html { redirect_to clients_url }
+      format.html { redirect_to admins_clients_path }
       format.json { head :no_content }
     end
   end

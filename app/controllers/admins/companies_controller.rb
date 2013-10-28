@@ -16,7 +16,7 @@ class Admins::CompaniesController < Admins::ApplicationAdminsController
 
   # GET /admins/companies/new
   def new
-    @admins_company = Company.new
+    @admin_company = Company.new
   end
 
   # GET /admins/companies/1/edit
@@ -26,15 +26,15 @@ class Admins::CompaniesController < Admins::ApplicationAdminsController
   # POST /admins/companies
   # POST /admins/companies.json
   def create
-    @admins_company = Company.new(admins_company_params)
+    @admin_company = Company.new(admins_company_params)
 
     respond_to do |format|
-      if @admins_company.save
-        format.html { redirect_to @admins_company, notice: 'Company was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @admins_company }
+      if @admin_company.save
+        format.html { redirect_to admin_company_path(@admin_company), notice: 'Company was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @admin_company }
       else
         format.html { render action: 'new' }
-        format.json { render json: @admins_company.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_company.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,7 +43,7 @@ class Admins::CompaniesController < Admins::ApplicationAdminsController
   # PATCH/PUT /admins/companies/1.json
   def update
     respond_to do |format|
-      if @admins_company.update(admins_company_params)
+      if @admin_company.update(admins_company_params)
         format.html { redirect_to @admins_company, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
       else
@@ -56,7 +56,7 @@ class Admins::CompaniesController < Admins::ApplicationAdminsController
   # DELETE /admins/companies/1
   # DELETE /admins/companies/1.json
   def destroy
-    @admins_company.destroy
+    @admin_company.destroy
     respond_to do |format|
       format.html { redirect_to admins_companies_url }
       format.json { head :no_content }
