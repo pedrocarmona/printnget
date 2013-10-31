@@ -5,5 +5,27 @@
     - @admin_company.errors.full_messages.each do |msg|
       %li= msg
 
+.fields
+  %div
+    = f.label :url
+    %br/
+    = f.text_field :url
+  %div
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %div
+    = f.label :nif
+    %br/
+    = f.text_field :nif
+  %div
+    = f.label :phone
+    %br/
+    = f.text_field :phone
+  %div
+
+
+  = f.select :owner_id, options_from_collection_for_select(Owner.all, "id", "name"), :class=> "span2"
+
 .actions
   = f.submit 'Save'

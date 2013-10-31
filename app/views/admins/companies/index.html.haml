@@ -8,7 +8,7 @@
 
   - @admin_companies.each do |admin_company|
     %tr
-      %td= link_to 'Show', admins_company_path(admin_company)
+      %td= link_to "#{admin_company.name}", admins_company_path(admin_company)
       %td= link_to 'Edit', edit_admins_company_path(admin_company)
       %td= link_to 'Destroy', admins_company_path(admin_company), :method => :delete, :data => { :confirm => 'Are you sure?' }
 

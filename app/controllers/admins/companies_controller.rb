@@ -71,6 +71,6 @@ class Admins::CompaniesController < Admins::ApplicationAdminsController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admins_company_params
-      params[:admins_company]
+      params[:company]
     end
 end
