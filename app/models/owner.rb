@@ -7,8 +7,10 @@ class Owner < ActiveRecord::Base
 
   validates :given_name,  :presence => {:message => 'required'}
   validates :last_name,  :presence => {:message => 'required'}
-  attr_accessible :email, :password, :password_confirmation, :given_name, :last_name
+  attr_accessible :email, :password, :password_confirmation, :given_name, :last_name, :phone
 
+
+  validates_format_of :phone, :with => /\A\+?[0-9]{3}-?[0-9]{6,12}\z/ix
   def name
   	"#{given_name} #{last_name}"
   end

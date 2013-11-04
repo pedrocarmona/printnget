@@ -1,0 +1,5 @@
+%h1 New admins_owner
+= form_for @admins_owner, :url => admins_owners_path do |f|
+    = render 'form', :f => f
+
+= link_to 'Back', admins_owners_path

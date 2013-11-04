@@ -1,0 +1,37 @@
+- if @admins_owner.errors.any?
+  #error_explanation
+    %h2= "#{pluralize(@admins_owner.errors.count, "error")} prohibited this admins_owner from being saved:"
+    %ul
+      - @admins_owner.errors.full_messages.each do |msg|
+        %li= msg
+
+.fields
+
+  %div
+    = f.label :given_name
+    %br/
+    = f.text_field :given_name
+  %div
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+  %div
+    = f.label :email
+    %br/
+    = f.text_field :email
+  %div
+    = f.label :phone
+    %br/
+    = f.text_field :phone
+  %div
+    = f.label :password
+    %br/
+    = f.password_field :password
+  %div
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation
+  %div
+
+.actions
+= f.submit 'Save'

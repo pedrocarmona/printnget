@@ -10,6 +10,7 @@ Printandget::Application.routes.draw do
   namespace :admins do
     resources :clients, :controller => 'clients'
     resources :companies, :controller => 'companies'
+    resources :owners, :controller => 'owners'
   end
   devise_for :admins
   resources :admins, :controller => 'admins/admins'
