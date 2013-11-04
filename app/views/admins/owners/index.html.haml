@@ -8,7 +8,7 @@
 
   - @admins_owners.each do |admins_owner|
     %tr
-      %td= link_to 'Show', admins_owner_path(admins_owner)
+      %td= link_to "#{admins_owner.name}", admins_owner_path(admins_owner)
       %td= link_to 'Edit', edit_admins_owner_path(admins_owner)
       %td= link_to 'Destroy', admins_owner_path(admins_owner), :method => :delete, :data => { :confirm => 'Are you sure?' }
 

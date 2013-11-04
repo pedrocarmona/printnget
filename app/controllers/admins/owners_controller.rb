@@ -44,7 +44,7 @@ class Admins::OwnersController < ApplicationController
   def update
     respond_to do |format|
       if @admins_owner.update(admins_owner_params)
-        format.html { redirect_to @admins_owner, notice: 'Owner was successfully updated.' }
+        format.html { redirect_to admins_owner_path @admins_owner, notice: 'Owner was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
