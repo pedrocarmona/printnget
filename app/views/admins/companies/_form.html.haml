@@ -24,8 +24,11 @@
     = f.text_field :phone
   %div
 
+  -if @admin_company.owner
+    = f.select :owner_id, options_from_collection_for_select(Owner.all, "id", "name", @admin_company.owner.id), :class=> "span2"
+  -else
+    = f.select :owner_id, options_from_collection_for_select(Owner.all, "id", "name"), :class=> "span2"
 
-  = f.select :owner_id, options_from_collection_for_select(Owner.all, "id", "name"), :class=> "span2"
 
 .actions
   = f.submit 'Save'
