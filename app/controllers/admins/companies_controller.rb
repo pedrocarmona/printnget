@@ -44,11 +44,11 @@ class Admins::CompaniesController < Admins::ApplicationAdminsController
   def update
     respond_to do |format|
       if @admin_company.update(admins_company_params)
-        format.html { redirect_to @admins_company, notice: 'Company was successfully updated.' }
+        format.html { redirect_to admins_company_path @admin_company, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @admins_company.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_company.errors, status: :unprocessable_entity }
       end
     end
   end

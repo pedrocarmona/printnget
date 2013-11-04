@@ -1,5 +1,5 @@
 %h1 Editing admin_company
-= form_for @admin_company, :url => admins_companies_path(@admin_company) do |f|
+= form_for @admin_company, :url => admins_company_path(@admin_company),:method => :put do |f|
 	= render 'form', :f => f
 
 = link_to 'Show', admins_company_path(@admin_company)
