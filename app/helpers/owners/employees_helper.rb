@@ -1,0 +1,2 @@
+module Owners::EmployeesHelper
+end

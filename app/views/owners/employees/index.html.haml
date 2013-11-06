@@ -1,0 +1,23 @@
+%h1 Listing owners_employees
+
+%table
+  %tr
+    %th Given name
+    %th Last name
+    %th Email
+    %th
+    %th
+    %th
+
+  - @owners_employees.each do |owners_employee|
+    %tr
+      %td= owners_employee.given_name
+      %td= owners_employee.last_name
+      %td= owners_employee.email
+      %td= link_to 'Show', owners_employee_path(owners_employee)
+      %td= link_to 'Edit', edit_owners_employee_path(owners_employee)
+      %td= link_to 'Destroy', owners_employee_path(owners_employee), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Employee', new_owners_employee_path

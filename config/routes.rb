@@ -2,6 +2,7 @@ Printandget::Application.routes.draw do
 
   namespace :owners do
     resources :clients, :controller => 'clients', only: [:show,:index]
+    resources :employees, :controller => 'employees'
   end
   devise_for :owners
 
