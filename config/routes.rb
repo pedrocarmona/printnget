@@ -1,20 +1,20 @@
 Printandget::Application.routes.draw do
 
-  devise_for :owners
-  resources :owners do
-    collection do
-      resources :clients, :controller => 'owners/clients', only: [:show,:index]
-    end
+  namespace :owners do
+    resources :clients, :controller => 'clients', only: [:show,:index]
   end
+  devise_for :owners
 
   devise_for :employees
-  
-  devise_for :admins
-  resources :admins, :controller => 'admins/admins' do
-    collection do
-      resources :clients, :controller => 'admins/clients'
-    end
+
+  namespace :admins do
+    resources :clients, :controller => 'clients'
+    resources :companies, :controller => 'companies'
   end
+  devise_for :admins
+  resources :admins, :controller => 'admins/admins'
+
+
 
   devise_for :clients
   resources :orders
@@ -66,7 +66,7 @@ Printandget::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

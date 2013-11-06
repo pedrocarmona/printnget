@@ -1,6 +1,10 @@
 %p#notice= notice
 
+%p
+  nome: #{@client.name}
+%p
+  email: #{@client.email}
 
-= link_to 'Edit', edit_client_path(@client)
+= link_to 'Edit', edit_admins_client_path(@client)
 \|
-= link_to 'Back', root_path
+= link_to 'Back', admins_clients_path

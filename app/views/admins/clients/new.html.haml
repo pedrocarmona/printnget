@@ -1,5 +1,5 @@
 %h1 New client
+= form_for @client, :url => admins_clients_path do |f|
+  = render 'form', :f => f
 
-= render 'form'
-
-= link_to 'Back', clients_path
+= link_to 'Back', admins_clients_path
