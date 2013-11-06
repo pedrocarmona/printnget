@@ -1,0 +1,17 @@
+%h1 Listing admins_owners
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @admins_owners.each do |admins_owner|
+    %tr
+      %td= link_to "#{admins_owner.name}", admins_owner_path(admins_owner)
+      %td= link_to 'Edit', edit_admins_owner_path(admins_owner)
+      %td= link_to 'Destroy', admins_owner_path(admins_owner), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Owner', new_admins_owner_path
